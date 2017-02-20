@@ -1,0 +1,36 @@
+{
+  "name": "mean-stack-practice",
+  "version": "1.0.0",
+  "description": "MEAN STACK Practice for first timer",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gau1st/mean-stack-practice.git"
+  },
+  "keywords": [
+    "MEAN",
+    "stack",
+    "MongoDB",
+    "Express",
+    "Angularjs",
+    "NodeJS",
+    "Javascript"
+  ],
+  "author": "Gilang Gautama",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gau1st/mean-stack-practice/issues"
+  },
+  "homepage": "https://github.com/gau1st/mean-stack-practice#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "mongoose": "^4.8.4",
+    "morgan": "^1.8.1"
+  }
+}
