@@ -20,9 +20,10 @@
       <link href="asset/css/bootstrap-theme.min.css" rel="stylesheet">
       <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
       <link href="http://getbootstrap.com/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
+      <!-- Animate CSS -->
+      <link href="asset/css/animate.css" rel="stylesheet">
       <!-- Custom styles for this template -->
-      <link href="http://getbootstrap.com/examples/theme/theme.css" rel="stylesheet">
+      <link href="asset/css/style.css" rel="stylesheet">
 
       <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
       <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -34,11 +35,21 @@
          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
 
-      <script src="asset/js/angular.js"></script>
-      <script src="asset/js/angular-route.js"></script>
+      <!-- Main Angular Files -->
+      <script src="asset/js/angular.min.js"></script>
+      <script src="asset/js/angular-route.min.js"></script>
+      <script src="asset/js/angular-animate.min.js"></script>
+
+      <!-- Angular Config/Routes -->
       <script src="app/app.js"></script>
       <script src="app/route.js"></script>
+
+      <!-- Angular Controllers -->
       <script src="app/controller/userCtrl.js"></script>
+
+      <!-- Angular Service -->
+      <script src="app/service/userService.js"></script>
+
    </head>
    <body ng-app="userApp">
 
