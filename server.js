@@ -3,30 +3,28 @@ var app        = express();
 var bodyParser = require('body-parser');
 var morgan     = require('morgan');
 var mongoose   = require('mongoose');
+var router     = express.Router();
+var appRoute   = require('./app/route/api')(router);
+var path       = require('path');
 var port       = process.env.PORT || 3000;
-var User       = require('./app/model/user');
+var mongoUrl   = 'mongodb://gau1st:gilang86@ds157499.mlab.com:57499/test-mongo-gau1st';
 
 app.use(morgan('dev'));
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.use(express.static(__dirname + '/public'));
 
-mongoose.connect('mongodb://127.0.0.1:27017/meanstackpractice');
+
+mongoose.connect(mongoUrl);
 var conn = mongoose.connection;
 conn.on('error', console.error.bind(console, 'Mongoose : connection error:'));
 conn.once('open', function() {
    // Wait for the database connection to establish, then start the app.
+   app.use('/api', appRoute);
+});
 
-   // http://localhost:3000/users
-   app.post('/users', function (req, res) {
-      var item = {
-         username: req.body.username,
-         password: req.body.password,
-         email: req.body.email,
-      }
-      var user = new User(item);
-      user.save();
-      res.send('User created');
-   });
+app.get("*",function(req, res) {
+   res.sendFile(path.join(__dirname + '/public/app/view/index.html'));
 });
 
 app.listen(port, function () {
